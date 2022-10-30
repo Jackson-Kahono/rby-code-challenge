@@ -1,5 +1,3 @@
-require_relative "article.rb"
-require_relative "author.rb"
 class Magazine
   attr_accessor :name, :category
 

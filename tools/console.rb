@@ -8,36 +8,40 @@ end
 ###  WRITE YOUR TEST CODE HERE ###
 
 def main
-  author = Author.new("Stephen King")
-  puts author.name
+  author1 = Author.new("Author1")
+  author2 = Author.new("Author2")
+  author3 = Author.new("Author3")
 
-  magazine = Magazine.new("Time","News")
-  puts magazine.name
+  magazine1 = Magazine.new("Magazine1", "Category1")
+  magazine2 = Magazine.new("Magazine2", "Category2")
+  magazine3 = Magazine.new("Magazine3", "Category3")
 
-  article = Article.new(author, magazine, "The Shining")
-  puts article.title
+  article1 = Article.new(author1, magazine1, "Article1")
+  article2 = Article.new(author2, magazine2, "Article2")
+  article3 = Article.new(author3, magazine3, "Article3")
 
-  Article.all.each {|article| puts article.title}
+  author1.add_article(magazine1, "Article4")
 
-  Magazine.all.each {|magazine| puts magazine.name}
+  Article.all.each do |article|
+    puts article.title
+  end
 
-  puts magazine.contributors
+  magazine1.contributors.each do |contributor|
+    puts contributor.name
+  end
 
-  puts magazine.find_by_name("Time")
+  magazine1.artile_titles.each do |title|
+    puts title
+  end
 
-  puts magazine.artile_titles
+  magazine1.contributing_authors.each do |author, count|
+    puts "#{author.name} has #{count} articles"
+  end
 
-  puts magazine.contributing_authors
-
-  puts author.articles
-
-  puts author.magazines
-
-  author.add_article(magazine, "The Shining")
-
-  puts author.topic_areas
-
+  magazine2.find_by_name("Magazine2")
   
+
+
 end
 
 ### DO NOT REMOVE THIS

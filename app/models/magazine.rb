@@ -1,3 +1,5 @@
+require_relative "article.rb"
+require_relative "author.rb"
 class Magazine
   attr_accessor :name, :category
 
@@ -48,9 +50,9 @@ class Magazine
   end
 
   def contributing_authors
-    no_of_contributions = contributors.tally
-    no_of_contributions.filter do |key,value|
-      value > 2
+    arr = contributors.tally
+    arr.select do |author, count|
+      count > 2
     end
   end
 end
